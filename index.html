@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Proyecto en Coolify</title>
+    <style>
+        :root {
+            --color-principal: #2563eb;
+            --color-fondo: #f8fafc;
+            --color-footer: #0f172a;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: var(--color-fondo);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--color-principal);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            flex: 1;
+            max-width: 600px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        button {
+            background-color: var(--color-principal);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+        footer {
+            background-color: var(--color-footer);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+
+        <h1 id="titulo-principal">Despliegue PaaS con Coolify</h1>
+    </header>
+
+    <main>
+        <h2>Estado del Servidor: Activo</h2>
+        <p id="mensaje-estado">Haz clic en el botón para probar la interactividad del código:</p>
+
+        <button onclick="cambiarMensaje()">Probar Conexión</button>
+    </main>
+    <footer>
+        <p><strong>Estudiante:</strong> Ien Zavala y Pablo Jorquera </p>
+        <p><strong>Asignatura:</strong> Cloud Computing </p>
+        <p><strong>Año:</strong> 2026</p>
+    </footer>
+
+    <script>
+        let contadorClics = 0;
+
+        function cambiarMensaje() {
+            contadorClics = contadorClics + 1;
+            const parrafo = document.getElementById("mensaje-estado");
+            parrafo.innerText = "¡El Frontend responde correctamente! Clics realizados: " + contadorClics;
+        }
+    </script>
+
+</body>
+</html>
